@@ -16,7 +16,8 @@
     "node": ">= 18.0.0"
   },
   "dependencies": {
-    "chalk": "^4.1.2"
+    "chalk": "^4.1.2",
+    "os-utils": "^0.0.14"
   },
   "jest-junit": {
     "suiteNameTemplate": "{filepath}",
@@ -27,6 +28,7 @@
     "@types/jest": "^29.5.2",
     "@types/mock-fs": "^4.13.1",
     "@types/node": "^20.3.3",
+    "@types/os-utils": "^0.0.2",
     "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
     "@typescript-eslint/parser": "^5.61.0",
