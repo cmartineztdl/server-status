@@ -1,7 +1,7 @@
 import { createServer, Server, IncomingMessage, ServerResponse } from 'http';
 import chalk from 'chalk';
 import { addLogToLoFile } from './addLogToLoFile';
-import { getServerStatus } from './getServerStatus';
+import { handleStatus } from './routes/status';
 
 const port = 3001;
 
@@ -11,9 +11,12 @@ const server: Server = createServer(
 
     addLogToLoFile(`${req.method} - ${req.url}`);
 
-    getServerStatus(serverStatus => {
-      res.end(JSON.stringify(serverStatus));
-    });
+    if (req.url?.startsWith('/status')) {
+      return handleStatus(req, res);
+    }
+
+    res.statusCode = 404;
+    res.end('Not found');
   }
 );
 
