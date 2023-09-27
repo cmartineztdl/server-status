@@ -1,0 +1,79 @@
+{
+  "extends": [
+    "airbnb-base",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "prettier",
+    "simple-import-sort",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "import/no-unresolved": [
+      2,
+      { "caseSensitive": false }
+    ],
+    "prettier/prettier": [
+      "error"
+    ],
+    "simple-import-sort/imports": "error",
+    "sort-imports": "off",
+    "import/order": "off",
+    "class-methods-use-this": "off",
+    "import/no-named-as-default-member": "off",
+    "camelcase": "error",
+    "no-restricted-imports": [
+      "error",
+      {
+        "paths": [
+          "lodash"
+        ]
+      }
+    ],
+    "no-use-before-define": "off",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error",
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      {
+        "functions": false
+      }
+    ],
+    "import/no-named-as-default": "off",
+    "curly": ["error", "all"],
+    "no-plusplus": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "ts": "never"
+      }
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "no-underscore-dangle": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.spec.js", "**/*.spec.ts"]}],
+    "no-console": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".ts"]
+      }
+    }
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.test.ts"
+      ],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
+  
+}
